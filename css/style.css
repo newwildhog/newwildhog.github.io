@@ -52,6 +52,16 @@ p { margin: 0 0 1em; }
 .skip-link { position: absolute; left: -999px; top: 0; background: var(--wine); color: #fff; padding: .5rem 1rem; z-index: 100; }
 .skip-link:focus { left: 1rem; top: 1rem; }
 
+/* Black line drawings (logo, page ornaments, hog sketch) go light in dark mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand img,
+  :root:not([data-theme="light"]) .page-title .ornament,
+  :root:not([data-theme="light"]) .prose .float-right.art { filter: invert(1); opacity: .9; mix-blend-mode: normal; }
+}
+:root[data-theme="dark"] .brand img,
+:root[data-theme="dark"] .page-title .ornament,
+:root[data-theme="dark"] .prose .float-right.art { filter: invert(1); opacity: .9; mix-blend-mode: normal; }
+
 /* ---------- Header / nav ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
