@@ -16,6 +16,7 @@ Edit the `.html` files directly and upload the folder.
 | `404.html` | Shown for broken links (GitHub Pages and Netlify pick it up automatically) |
 | `css/style.css` | All styling. Colors are at the top in `:root`. |
 | `js/site.js` | Mobile menu, photo viewer, past-releases filter |
+| `fonts/` | Self-hosted web fonts (SIL Open Font License) |
 | `images/` | Site images. `images/gallery/` holds full-size photos, `images/gallery/thumbs/` the 640x480 thumbnails |
 | `fort-ross-seaview-ava-map.pdf` | AVA map linked from the About page |
 | `aboutwildhog.html`, `currentreleases.html`, `pastreleases.html`, `albumsWH.html` | Tiny redirect stubs so old bookmarks still work. Leave them alone. |
@@ -44,8 +45,9 @@ convert photo.jpg -auto-orient -strip -thumbnail '640x480^' -gravity center -ext
 **Add a video.** Copy an `<article class="video">` block in `videos.html` and replace the YouTube id in the
 iframe `src` (the part after `/embed/`).
 
-**Change colors or fonts.** Top of `css/style.css`. Fonts load from Google Fonts; delete that `<link>` from the
-page heads to use system fonts only.
+**Change colors or fonts.** Top of `css/style.css`. The two typefaces (Cormorant Garamond and Source Sans 3) are
+self-hosted in `fonts/` and declared with `@font-face` at the top of the stylesheet, so the site makes no third-party
+requests at all.
 
 ## Deploying
 
